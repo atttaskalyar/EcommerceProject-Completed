@@ -46,24 +46,34 @@
             @csrf
             <div style="padding: 15px">
             <label for="">Product title</label>
-            <input class='text-color-black' type="text" name="title" placeholder="Product Title">
+            <input required class='text-color-black' type="text" name="title" placeholder="Product Title">
         </div>
 
         <div style="padding: 15px">
             <label for="">Price</label>
-            <input class='text-color-black' type="number" min="0" max="99999999" name="price" placeholder="Product Price">
+            <input required class='text-color-black' type="number" min="0" max="99999999" name="price" placeholder="Product Price">
         </div>
 
         <div style="padding: 15px">
             <label for="">Description</label>
-            <input class='text-color-black' type="text" name="des" placeholder="Product Description">
+            <input required class='text-color-black' type="text" name="des" placeholder="Product Description">
         </div>
 
         <div style="padding: 15px">
             <label for="">Product quantity</label>
-            <input class='text-color-black' type="number" min="0" max="99999999" name="quantity" placeholder="Product quantity">
+            <input required class='text-color-black' type="number" min="0" max="99999999" name="quantity" placeholder="Product quantity">
         </div>
 
 
         <div style="padding: 15px">
-            <input type="file" name="
+            <input type="file" name="file">
+        </div>
+
+        <div style="padding: 15px">
+            <input type="submit" class="btn btn-success">
+        </div>
+        </form>
+        </div><!-- main-panel ends -->
+      @include('admin.scripts')
+  </body>
+</html>

@@ -11,21 +11,14 @@ class AdminController extends Controller
 {
     public function product()
     {
-        if(Auth::id())
-        {
-            if(Auth::user()->type == '1')
-            {
+        if (Auth::id()) {
+            if (Auth::user()->usertype == 1) {
                 return view('admin.product');
+            } else {
+                //return redirect()->back();
+                return "<h1>this is not working due to some reason</h1>";
             }
-
-            else
-            {
-                return redirect()->back();
-            }
-        }
-
-        else
-        {
+        } else {
             return redirect('login');
         }
     }
@@ -79,8 +72,7 @@ class AdminController extends Controller
 
         $image = $request->file;
 
-        if($image)
-        {
+        if ($image) {
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->file->move('productimage', $imagename);
 
@@ -97,11 +89,11 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Product Updated Successfully');
     }
-    
+
     public function showorders()
     {
         $order = order::all();
-        return view('admin.showorders',compact('order'));
+        return view('admin.showorders', compact('order'));
     }
 
     public function updatestatus($id)

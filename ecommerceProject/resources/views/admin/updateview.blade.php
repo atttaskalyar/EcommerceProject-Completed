@@ -17,6 +17,11 @@
        input{
            color: black;
        }
+
+       .text-color-black{
+           color:black;
+           min-width: 300px;
+       }
    </style>
 
   <body>
@@ -42,22 +47,22 @@
             @csrf
             <div style="padding: 15px">
             <label for="">Product title</label>
-            <input type="text" name="title" value="{{$data->title}}" required="">
+            <input class='text-color-black' required type="text" name="title" value="{{$data->title}}" required="">
         </div>
 
         <div style="padding: 15px">
             <label for="">Price</label>
-            <input type="number" name="price" value="{{$data->price}}" required=""">
+            <input class='text-color-black' required min="0" max="99999999" type="number" name="price" value="{{$data->price}}" required=""">
         </div>
 
         <div style="padding: 15px">
             <label for="">Description</label>
-            <input type="text" name="des" value="{{$data->description}}" required="">
+            <input class='text-color-black' required type="text" name="des" value="{{$data->description}}" required="">
         </div>
 
         <div style="padding: 15px">
             <label for="">Product quantity</label>
-            <input type="text" name="quantity" value="{{$data->quantity}}" required="">
+            <input class='text-color-black' required min="0" max="99999999" type="number" name="quantity" value="{{$data->quantity}}" required="">
         </div>
 
         <div style="padding: 15px">

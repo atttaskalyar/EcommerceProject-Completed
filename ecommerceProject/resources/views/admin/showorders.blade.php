@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
    @include('admin.css')
+   <style>
+       @media only screen and (max-width: 600px) {
+  tr{
+      display: flex;
+  }
+}
+   </style>
   <body>
 @include('admin.sidebar')
       <!-- partial -->
@@ -24,8 +31,8 @@
                     @foreach($order as $orders)
 
                     <tr align="center" style="background-color: black;">
-                        <td style="padding: 20px;">{{$orders->name}}</td>
                         <td style="padding: 20px;">{{$orders->phone}}</td>
+                        <td style="padding: 20px;">{{$orders->name}}</td>
                         <td style="padding: 20px;">{{$orders->address}}</td>
                         <td style="padding: 20px;">{{$orders->product_name}}</td>
                         <td style="padding: 20px;">{{$orders->price}}</td>
