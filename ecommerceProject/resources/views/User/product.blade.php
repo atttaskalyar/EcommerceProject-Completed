@@ -4,12 +4,12 @@
         <div class="col-md-12">
           <div class="section-heading">
             <h2>Latest Products</h2>
-            <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
-            <form action="{{url('search')}}" method="get" 
+
+            <form action="{{url('search')}}" method="get"
               class="form-inline" style="float: right; padding: 10px;">
 
             @csrf
-            
+
               <input class="form-control" type="search" name="search"  placeholder="Search">
               <input type="Submit" value="Search" class="btn btn-success">
 
@@ -26,7 +26,7 @@
               <a href="#"><h4>{{$product->title}}</h4></a>
               <h6>${{$product->price}}</h6>
               <p>{{$product->description}}</p>
-              
+
               <form action="{{url('addcart',$product->id)}}" method="POST">
 
                 @csrf
